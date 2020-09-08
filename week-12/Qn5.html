@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <form onsubmit=" return form_validation();">
+
+ 
+    <label>Enter password:</label><br>
+    <input type="password" name="password" id="pass" required> &nbsp; &nbsp; &nbsp;<span id="hide_pass" style="font-style: italic; color:red;display: none ;">Password length must be greater than 5</span><br><br>
+
+<label>Confirm Password:</label><br>
+<input type="password" id="confirm_pass" name="confirm_password"> &nbsp; &nbsp; &nbsp;<span id="hide_confirm1" style="font-style: italic; color:red;display: none ;">Password doesnot matched</span><span id="hide_confirm2" style="font-style: italic; color: green;display: none;">Password matched</span><br>
+<br>
+<br>
+<button id="sub-btn">Submit</button>
+</form>
+    <script>
+var password = document.getElementById("pass");
+var confirm_password = document.getElementById("confirm_pass");
+var submit_btn = document.getElementById('sub-btn');
+var password_error=document.getElementById("hide_pass");
+var confirm_error = document.getElementById("hide_confirm1");
+var confirm_correct = document.getElementById("hide_confirm2");
+var status=0;
+password.addEventListener("input",function(){
+    console.log(password.value.length);
+    if(password.value.length<=5){
+    password.style.borderColor="red";
+  password_error.style.display="inline";
+  status=1;
+    }
+    else{
+        password.style.borderColor="";
+        password_error.style.display="none";
+    }
+  
+})
+if(status==1)
+pass.addEventListener("blur",savedata);
+confirm_password.addEventListener("input",function(){
+    if(confirm_password.value==password.value){
+ confirm_password.style.borderColor="green";
+        confirm_correct.style.display="inline";
+        confirm_error.style.display="none";
+    }
+    else{
+        confirm_password.style.borderColor="red";
+        confirm_correct.style.display="none";
+        confirm_error.style.display="inline";
+    }
+})
+
+
+function form_validation(){
+
+    if(confirm_password.value==password.value){
+        alert("password matched.Form submittted");
+        return 0;
+    }
+    else{
+        alert("password doesnot match");
+        return 1;
+    }
+
+}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

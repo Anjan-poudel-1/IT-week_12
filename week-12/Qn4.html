@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #para{
+            margin: auto;
+            height: 500px;
+            width: 900px;
+            background-color: red;
+        }
+        #change-btn{
+
+            margin-left: 48%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="para">
+
+    </div>
+
+<br>
+<button id="change-btn">Click Me</button>
+    <script>
+        var paragraph = document.getElementById("para");
+        var btn = document.getElementById("change-btn");
+var n = 256;
+function random_number(){
+    return (Math.floor((n*Math.random())));
+}
+
+btn.addEventListener("click",colorgenerator);
+
+function colorgenerator(){
+var color_change="rgb(" +random_number()+","+random_number()+","+random_number()+ ")";
+console.log(color_change);
+paragraph.style.backgroundColor=color_change;
+}
+
+
+    </script>
+</body>
+</html>

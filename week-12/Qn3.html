@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #hover_me{
+cursor: pointer;
+font-size: 35px;
+width: 250px;
+    }
+    
+</style>
+<body>
+    
+
+    <p id="hover_me">Hover Here</p>
+
+    <script>
+var hover_me = document.getElementById("hover_me");
+
+hover_me.addEventListener("mouseover",mOver);
+hover_me.addEventListener("mouseout",mOut);
+function mOver(){
+hover_me.innerHTML = "Thank You";
+}
+function mOut(){
+hover_me.innerHTML = "Mouse Over ME";
+
+}
+    </script>
+</body>
+</html>
